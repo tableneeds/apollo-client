@@ -239,7 +239,7 @@ export interface BaseSubscriptionOptions<
 
 export interface SubscriptionResult<TData = any, TVariables = any> {
   loading: boolean;
-  data?: TData;
+  data?: Partial<TData>; // Subscriptions fire with empty object on registration
   error?: ApolloError;
   // This was added by the legacy useSubscription type, and is tested in unit
   // tests, but probably shouldn’t be added to the result.
