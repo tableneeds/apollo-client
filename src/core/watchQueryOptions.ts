@@ -169,7 +169,7 @@ export type UpdateQueryFn<
 > = (
   previousQueryResult: TData,
   options: {
-    subscriptionData: { data: Partial<TSubscriptionData> };
+    subscriptionData: { data: Partial<TSubscriptionData> /* Subscriptions fire with empty object on registration */ };
     variables?: TSubscriptionVariables;
   },
 ) => TData;
